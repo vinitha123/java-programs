@@ -1,0 +1,286 @@
+
+Find biggest/smallest number among 'N' numbers
+import java.util.Scanner;
+ public class MaxMinNumber {
+  public static void main(String[] args) {
+     Scanner in = new Scanner(System.in);
+     System.out.println("Enter first number: ");
+     int n1 = in.nextInt();
+     System.out.println("Enter second number: ");
+     int n2 = in.nextInt();
+     System.out.println("Enter third number: ");
+     int n3 = in.nextInt();
+     int largest = Math.max(n1, Math.max(n2, n3));
+     System.out.println("Largest among (" + n1 + ", " + n2 + ", " + n3 + ") is: " 
+                                    + largest);
+     int smallest = Math.min(n1, Math.min(n2, n3));
+     System.out.println("Smallest among (" + n1 + ", " + n2 + ", " + n3 + ") is: " 
+                                     + smallest);
+  }
+}
+Output :
+Enter first number: 
+100
+Enter second number: 
+13
+Enter third number: 
+152
+Largest among (100, 13, 152) is: 152
+Smallest among (100, 13, 152) is: 13
+
+
+Print the mathematical table of give number
+import java.util.Scanner;
+ public class Multiplication_Table 
+{
+    public static void main(String[] args) 
+    {
+        Scanner s = new Scanner(System.in);
+	System.out.print("Enter number:");        
+	int n=s.nextInt();
+        for(int i=1; i <= 10; i++)
+        {
+            System.out.println(n+" * "+i+" = "+n*i);
+        }
+    }
+}
+
+
+Output :
+Enter number:7
+7 * 1 = 7
+7 * 2 = 14
+7 * 3 = 21
+7 * 4 = 28
+7 * 5 = 35
+7 * 6 = 42
+7 * 7 = 49
+7 * 8 = 56
+7 * 9 = 63
+7 * 10 = 70
+
+
+
+Print the mathematical tables from 1 to 10
+import java.util.Scanner;
+ 
+public class Mathetable {
+ 
+ public static void main(String[] args) {
+  Scanner in = new Scanner(System.in);
+   
+  System.out.print("Input a number: ");
+  int num1 = in.nextInt();
+   
+  for (int i=0; i< 10; i++){
+   System.out.println(num1 + " x " + (i+1) + " = " + 
+     (num1 * (i+1)));
+  }
+ }
+}
+Output :
+Input a number: 8                                                                                             
+8 x 1 = 8                                                                                                     
+8 x 2 = 16                                                                                                    
+8 x 3 = 24                                                                                                    
+8 x 4 = 32                                                                                                    
+8 x 5 = 40                                                                                                    
+8 x 6 = 48                                                                                                    
+8 x 7 = 56                                                                                                    
+8 x 8 = 64                                                                                                    
+8 x 9 = 72                                                                                                    
+8 x 10 = 80 
+
+
+Find whether given number is prime number or not.
+
+public class Prime {
+
+    public static void main(String[] args) {
+
+        int num = 29;
+        boolean flag = false;
+        for(int i = 2; i <= num/2; ++i)
+        {
+            
+            if(num % i == 0)
+            {
+                flag = true;
+                break;
+            }
+        }
+
+        if (!flag)
+            System.out.println(num + " is a prime number.");
+        else
+            System.out.println(num + " is not a prime number.");
+    }
+}
+Output:
+29 is a prime number.
+Print the prime numbers between 2 to 100
+
+class PrimeNumbers
+{
+   public static void main (String[] args)
+   {		
+       int i =0;
+       int num =0;
+      
+       String  primeNumbers = "";
+
+       for (i = 1; i <= 100; i++)         
+       { 		  	  
+          int counter=0; 	  
+          for(num =i; num>=1; num--)
+	  {
+             if(i%num==0)
+	     {
+ 		counter = counter + 1;
+	     }
+	  }
+	  if (counter ==2)
+	  {
+	     
+	     primeNumbers = primeNumbers + i + " ";
+	  }	
+       }	
+       System.out.println("Prime numbers from 1 to 100 are :");
+       System.out.println(primeNumbers);
+   }
+}
+Output:
+
+Prime numbers from 1 to 100 are :
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97
+
+
+Print the factorial of given number
+class FactorialExample{  
+ public static void main(String args[]){  
+  int i,fact=1;  
+  int number=5; 
+  for(i=1;i<=number;i++){    
+      fact=fact*i;    
+  }    
+  System.out.println("Factorial of "+number+" is: "+fact);    
+ }  
+}  
+Output:
+
+Factorial of 5 is: 120
+
+Find whether the given number is palindrome or not.
+public class Palindrome {
+
+    public static void main(String[] args) {
+
+        int num = 121, reversedInteger = 0, remainder, originalInteger;
+
+        originalInteger = num;
+
+       
+        while( num != 0 )
+        {
+            remainder = num % 10;
+            reversedInteger = reversedInteger * 10 + remainder;
+            num  /= 10;
+        }
+
+       
+        if (originalInteger == reversedInteger)
+            System.out.println(originalInteger + " is a palindrome.");
+        else
+            System.out.println(originalInteger + " is not a palindrome.");
+    }
+}
+121 is a palindrome number.
+
+Find whether the given number is Armstrong number or not.
+
+import java.util.Scanner;
+public class JavaExample {
+
+    public static void main(String[] args) {
+
+        int num, number, temp, total = 0;
+        System.out.println("Ënter 3 Digit Number");
+        Scanner scanner = new Scanner(System.in);
+        num = scanner.nextInt();
+        scanner.close();
+        number = num;
+
+        for( ;number!=0;number /= 10)
+        {
+            temp = number % 10;
+            total = total + temp*temp*temp;
+        }
+
+        if(total == num)
+            System.out.println(num + " is an Armstrong number");
+        else
+            System.out.println(num + " is not an Armstrong number");
+    }
+}
+Output:
+Enter 3 Digit Number
+371
+371 is an Armstrong number
+
+Write a program to compare two Strings
+import java.util.Scanner;
+ 
+class CompareStrings
+{
+   public static void main(String args[])
+   {
+      String s1, s2;
+      Scanner in = new Scanner(System.in);
+ 
+      System.out.println("Enter the first string");
+      s1 = in.nextLine();
+ 
+      System.out.println("Enter the second string");
+      s2 = in.nextLine();
+ 
+      if (s1.compareTo(s2) > 0)
+         System.out.println("The first string is greater than the second.");
+      else if (s1.compareTo(s2) < 0)
+         System.out.println("The first string is smaller than the second.");
+      else   
+         System.out.println("Both the strings are equal.");
+   }
+}
+
+
+Write a program to print the give string in reverse order in java
+
+import java.lang.*;
+import java.io.*;
+import java.util.*;
+ 
+
+class ReverseString
+{
+    public static void main(String[] args)
+    {
+        String input = Java;
+ 
+        StringBuilder input1 = new StringBuilder();
+ 
+       
+        input1.append(input);
+ 
+        
+        input1 = input1.reverse();
+ 
+        
+        System.out.println(input1);
+    }
+}
+
+Output:
+
+avaJ
+
+
